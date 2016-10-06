@@ -139,7 +139,7 @@ TEST_P(GameTest, redatePluginsShouldThrowIfTheGameHasNotYetBeenInitialisedForSky
   game.SetGamePath(dataPath.parent_path());
 
   if (GetParam() == GameType::tes5)
-    EXPECT_THROW(game.RedatePlugins(), Error);
+    EXPECT_THROW(game.RedatePlugins(), std::system_error);
   else
     EXPECT_NO_THROW(game.RedatePlugins());
 }
